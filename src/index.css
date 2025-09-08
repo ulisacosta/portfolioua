@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: 222 30% 7.8%; /* #0a0f1c */
+  --foreground: 210 17% 85.9%; /* #e2e8f0 */
+  --card: 221 27% 12.5%; /* #131a2a */
+  --card-foreground: 210 17% 85.9%;
+  --popover: 221 27% 12.5%; /* #131a2a */
+  --popover-foreground: 210 17% 85.9%;
+  --primary: 216 93% 58%; /* #3b82f6 */
+  --primary-foreground: 0 0% 100%; /* #ffffff */
+  --secondary: 216 23% 20.2%; /* #1e293b */
+  --secondary-foreground: 214 20% 65.5%; /* #94a3b8 */
+  --muted: 214 27% 16.9%; /* #1e2a3d */
+  --muted-foreground: 215 14% 53.9%; /* #64748b */
+  --accent: 217 91% 46.1%; /* #2563eb */
+  --accent-foreground: 0 0% 100%;
+  --destructive: 348 83% 59.4%; /* #ef4444 */
+  --destructive-foreground: 0 0% 100%;
+  --border: 216 93% 58% / 0.2; /* rgba(59, 130, 246, 0.2) */
+  --input: 0 0% 0% / 0; /* transparent */
+  --input-background: 216 23% 20.2%; /* #1e293b */
+  --switch-background: 215 14% 53.9%; /* #64748b */
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: 216 93% 58%; /* #3b82f6 */
+  --chart-1: 216 93% 58%;
+  --chart-2: 185 86% 43%;
+  --chart-3: 259 79% 63.3%;
+  --chart-4: 140 78% 39.8%;
+  --chart-5: 45 92% 50.4%;
+  --radius: 0.75rem;
+  --sidebar: 216 23% 20.2%;
+  --sidebar-foreground: 210 17% 85.9%;
+  --sidebar-primary: 216 93% 58%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 216 23% 20.2%;
+  --sidebar-accent-foreground: 214 20% 65.5%;
+  --sidebar-border: 216 93% 58% / 0.2;
+  --sidebar-ring: 216 93% 58%;
+
+  /* Tech gradient colors */
+  --tech-gradient-1: 216 93% 58%;
+  --tech-gradient-2: 216 67% 46%;
+  --tech-gradient-3: 185 86% 43%;
+  --tech-blue-glow: 216 93% 58% / 0.3;
+  --tech-cyan-glow: 185 86% 43% / 0.3;
+}
+
+.dark {
+  --background: 222 47% 11%; /* #020617 */
+  --foreground: 210 20% 98%; /* #f8fafc */
+  --card: 216 23% 20.2%; /* #0f172a */
+  --card-foreground: 210 20% 98%;
+  --popover: 216 23% 20.2%;
+  --popover-foreground: 210 20% 98%;
+  --primary: 217 91% 46%; /* #60a5fa */
+  --primary-foreground: 222 47% 11%;
+  --secondary: 216 23% 20.2%;
+  --secondary-foreground: 210 17% 85.9%;
+  --muted: 216 23% 20.2%;
+  --muted-foreground: 215 14% 53.9%;
+  --accent: 216 93% 58%;
+  --accent-foreground: 210 20% 98%;
+  --destructive: 348 77% 65.9%;
+  --destructive-foreground: 222 47% 11%;
+  --border: 217 91% 46% / 0.2;
+  --input: 216 23% 20.2%;
+  --ring: 217 91% 46%;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: 217 91% 46%;
+  --chart-2: 185 86% 43%;
+  --chart-3: 259 79% 63.3%;
+  --chart-4: 140 78% 39.8%;
+  --chart-5: 45 92% 50.4%;
+  --sidebar: 222 47% 11%;
+  --sidebar-foreground: 210 20% 98%;
+  --sidebar-primary: 217 91% 46%;
+  --sidebar-primary-foreground: 222 47% 11%;
+  --sidebar-accent: 216 23% 20.2%;
+  --sidebar-accent-foreground: 210 17% 85.9%;
+  --sidebar-border: 217 91% 46% / 0.2;
+  --sidebar-ring: 217 91% 46%;
+
+  /* Tech gradient colors for dark mode */
+  --tech-gradient-1: 217 91% 46%;
+  --tech-gradient-2: 216 93% 58%;
+  --tech-gradient-3: 185 86% 43%;
+  --tech-blue-glow: 217 91% 46% / 0.4;
+  --tech-cyan-glow: 185 86% 43% / 0.4;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: radial-gradient(
+        circle at 20% 80%,
+        hsl(var(--tech-blue-glow)) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        hsl(var(--tech-cyan-glow)) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 40% 40%,
+        hsl(259 79% 63.3% / 0.1) 0%, /* rgba(139, 92, 246, 0.1) convertido a HSL */
+        transparent 50%
+      );
+  }
+}
+
+@layer utilities {
+  .tech-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--tech-gradient-1)) 0%,
+      hsl(var(--tech-gradient-2)) 50%,
+      hsl(var(--tech-gradient-3)) 100%
+    );
+  }
+
+  .tech-glow {
+    box-shadow:
+      0 0 20px hsl(var(--tech-blue-glow)),
+      0 0 40px hsl(var(--tech-blue-glow)),
+      0 0 80px hsl(var(--tech-blue-glow));
+  }
+
+  .tech-border {
+    border: 1px solid hsl(var(--border));
+  }
+
+  .tech-grid {
+    background-image: linear-gradient(
+        hsl(var(--primary) / 0.1) 1px, /* Usando una variable para el color */
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        hsl(var(--primary) / 0.1) 1px,
+        transparent 1px
+      );
+    background-size: 20px 20px;
+  }
+}
