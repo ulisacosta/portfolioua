@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "./components/ui/card";
-import { ImageWithFallback } from "./assets/ImageWithFallback";
+
 import {
   Github,
   Linkedin,
@@ -504,7 +504,7 @@ function PortfolioContent() {
                               playsInline
                             />
                           ) : (
-                            <ImageWithFallback
+                            <img
                               src={project.image}
                               alt={t(project.titleKey)}
                               className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-500'
@@ -683,7 +683,7 @@ function PortfolioContent() {
                 <div className='absolute -bottom-4 -right-4 w-16 h-16 bg-gradient-to-br from-primary to-cyan-500 rounded-xl opacity-20 -rotate-12' />
 
                 <div className='aspect-square rounded-2xl overflow-hidden tech-border'>
-                  <ImageWithFallback
+                  <img
                     src='./src/assets/fotocvmejorada.png'
                     alt='Workspace'
                     className='w-full h-full object-cover hover:scale-105 transition-transform duration-500'
