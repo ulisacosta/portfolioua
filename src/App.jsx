@@ -684,7 +684,7 @@ function PortfolioContent() {
 
                 <div className='aspect-square rounded-2xl overflow-hidden tech-border'>
                   <img
-                    src='./src/assets/fotocvmejorada.png'
+                    src='https://res.cloudinary.com/dphsynf6f/image/upload/v1757357543/PORTFOLIO2/fotocvmejorada_zjw19e.png'
                     alt='Workspace'
                     className='w-full h-full object-cover hover:scale-105 transition-transform duration-500'
                   />
